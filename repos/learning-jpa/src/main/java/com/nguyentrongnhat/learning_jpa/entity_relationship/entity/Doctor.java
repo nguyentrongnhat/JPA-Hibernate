@@ -6,23 +6,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
 @Getter
-@Entity
-public class Patient {
+@Setter
+public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    private int age;
-
-    @OneToOne(mappedBy = "patient")
-    private MedicalRecord medicalRecord;
-
-    @ManyToOne
-    private Doctor doctor;
+    @OneToMany(mappedBy = "doctor")
+    private List<Patient> patients;
 }
