@@ -12,13 +12,23 @@ public class Demo implements CommandLineRunner {
 
     private final OneToOneDemo oneToOneDemo;
     private final ManyToOneDemo manyToOneDemo;
+    private final CascadingTechnique cascadingTechnique;
+    private final ManyToManyDemo manyToManyDemo;
 
     @Override
     public void run(String... args) throws Exception {
         //Chạy Demo nào thì uncomment demo đó.
-        oneToOneDemo.runDemo();
+        //oneToOneDemo.runDemo();
 
-        manyToOneDemo.saveEntityDemo();
-        manyToOneDemo.bidirectionalDemo();
+        //manyToOneDemo.saveEntityDemo();
+        //manyToOneDemo.bidirectionalDemo();
+
+        cascadingTechnique.demoCascadeTypePersist();
+
+        cascadingTechnique.demoCascadeTypeMerge();
+
+        //cascadingTechnique.demoCascadeTypeRemove();
+
+        manyToManyDemo.demoPersistData();
     }
 }
